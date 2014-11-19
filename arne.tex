@@ -161,7 +161,7 @@
  \begin{itemize}
   \item Correct for branching fraction ($R = 5.95$)
   \item Increase statistics of \Zll events by loosening b-jet tagger and applying a scale factor ($F$) to each b-jet bin
-  \item Measure efficiency ($\epsilon$) of reconstructing \Zll event
+  \item Measure efficiency ($\epsilon$) of reconstructing \Zll event with a Tag\&Probe method
   \item Determine and correct for purity ($P$) of \Zll selection
   \item Apply lepton acceptance corrections ($A$)
  \end{itemize}
@@ -172,30 +172,62 @@
   \begin{block}{}
 \centering
 % SAY: 2 ways to proceed
-Determination of \Zll efficiencies and purity using 13\tev 25ns HT binned DY csa14 samples
 \end{block}
 \end{frame}
 
 % --------------------------------------------------
-
-\subsection{\Zll - Selection \& Efficiency determination}
+\subsection{Efficiencies using a Tag\&Probe method }
 \begin{frame}
-\frametitle{RA2b Selection}
-Selection cuts:
-\begin{itemize}
- \item $\met > 125 \gev, \HT > 400 \gev $ and $\Delta\Phi_{N}^{min}>4$
- \item At least 3 jets ($p_{T\text{1}},p_{T\text{2}} > 70\gev$, $p_{T\text{3}} > 50\gev$) and \\ at least 1 CSVL jet
- \item Electrons: miniAOD slimmedElectrons work-point 'veto' ($\pt>17\gev$)
- \item Muons: miniAOD slimmedMuons work-point 'tight' ($\pt>17\gev$)
-\end{itemize}
-Efficiency determination via Tag \& Probe method
-\begin{itemize}
- \item Tag lepton: Nominal cuts $\pt>20\gev$
- \item Probe lepton: Any reconstructed lepton $\pt>17\gev$ and $|\eta|<2.5$
- \item Fit invariant mass of di-lepton system apply tag requirement 
- \item Efficiency: passing / (passing+failing) (to be probed criteria)
-\end{itemize}
+ \frametitle{Determination of lepton efficiencies}
+ Move to backup if no time
 \end{frame}
+
+
+% --------------------------------------------------
+\subsection{\Zll \met Closure}
+\begin{frame}
+ \frametitle{Normalized \met distribution for 0 and 1 CSVM b-jet}
+ \begin{overpic}[width=0.95\textwidth]{figures/ZwithLepLep/MET_Closure.png}
+	%\put(60,53){\rotatebox{0}{\scriptsize Pass}}
+     \end{overpic}\\
+ \begin{itemize}
+  \item Leptons corrected for reconstruction efficiencies ($0.929 < \epsilon < 0.975$) and acceptance ($0.632 < A< 0.886$) 
+ \end{itemize}
+
+\end{frame}
+
+% --------------------------------------------------
+\subsection{\Zll Scaling of loose b-jet Region to tight Region}
+\begin{frame}
+ \frametitle{Scaling factor for b-jet regions}
+ \begin{itemize}
+  \item Increase statistics by loosen cut on b-taggger to CSVL scale using independent control sample (QCD \& MET/HT inverted DY)
+ \end{itemize}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \begin{itemize}
+      \item  8\tev QCD enriched sample agreed in data but not in MC
+      \item Check will be done once data is availabe. For now inverted MET/HT DY samples used to calcuate scale factors
+     \end{itemize}
+           \Zee prediction using inverted MET/HT sample
+           \begin{tabular}{|r|l|l|}
+        \hline
+        b-jets  & Prediction & Expectation \\ 
+	1	& $840.3\pm 32.3$ & 834\\
+	2	& $332.0\pm 18.8$ & 365\\
+	3	& $15.71\pm 4.39$ & 16\\
+        \hline
+    \end{tabular}
+    \end{column}
+        \begin{column}{0.5\textwidth}
+\begin{overpic}
+       [width=0.95\textwidth]{figures/ZwithLepLep/CSV_Most_blikeJet.png}
+      \end{overpic}
+     
+    \end{column}
+\end{columns}
+\end{frame}
+
 
 % --------------------------------------------------
 \subsection{\Zmumu -Efficiencies}
@@ -949,6 +981,25 @@ Preliminary closure: Efficiencies binned in BTags instead of \NJets\\
       \begin{overpic}[width=0.95\textwidth]{figures/lost-lepton/ElecIsoBTag2ToInf.pdf} \end{overpic}
     \end{column}
   \end{columns}
+\end{frame}
+
+\subsection{\Zll - Selection \& Efficiency determination}
+\begin{frame}
+\frametitle{RA2b Selection}
+Selection cuts:
+\begin{itemize}
+ \item $\met > 125 \gev, \HT > 400 \gev $ and $\Delta\Phi_{N}^{min}>4$
+ \item At least 3 jets ($p_{T\text{1}},p_{T\text{2}} > 70\gev$, $p_{T\text{3}} > 50\gev$) and \\ at least 1 CSVL jet
+ \item Electrons: miniAOD slimmedElectrons work-point 'veto' ($\pt>17\gev$)
+ \item Muons: miniAOD slimmedMuons work-point 'tight' ($\pt>17\gev$)
+\end{itemize}
+Efficiency determination via Tag \& Probe method
+\begin{itemize}
+ \item Tag lepton: Nominal cuts $\pt>20\gev$
+ \item Probe lepton: Any reconstructed lepton $\pt>17\gev$ and $|\eta|<2.5$
+ \item Fit invariant mass of di-lepton system apply tag requirement 
+ \item Efficiency: passing / (passing+failing) (to be probed criteria)
+\end{itemize}
 \end{frame}
 
 \setcounter{framenumber}{21}
