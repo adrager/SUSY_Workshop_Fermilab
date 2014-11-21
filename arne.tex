@@ -34,7 +34,7 @@
 \title[SUSY-Workshop]{\huge Status of RA2/b}
 \subtitle{\Large Background Estimation Methods:\\
 \ZInvJets \\ \ttbar \& \wpj \\\vspace{0.1cm}
-\large Isolated Track vs Isolated (light) Lepton Veto}
+\large Isolated Track vs Isolated (e/$\mu$) Lepton Veto}
 \author[Arne-Rasmus~Dr\"ager]{
   Arne-Rasmus~Dr\"ager (Uni Hamburg)\\on behalf of the RA2/b team
 }
@@ -117,7 +117,8 @@
       \item $\met >125 \gev$
       \item Jet(1,2,3) $\pt>70,70,50\gev$
       \item $\BTag\ge1$ CSVM ($>0.679$) $\pt>30\gev$
-      \item $\mindeltaphi>4$
+       \item $\mindeltaphi>4$
+%       \item $\Delta]\phi_N^\phi \equiv \min(\Delta\phi_i/\sigma_{\Delta\phi,i}) > 4$
       \item Isolated e, $\mu$ \& track veto
      \end{itemize}
      
@@ -138,25 +139,26 @@
 \begin{columns}
  \begin{column}{0.5\textwidth}
   \begin{itemize}
-   \item \ZInvJets events\\
-   \begin{itemize}
-    \item \Zll (Troy Mulholland)
-    \item \photonJets (Andrew Whitbeck)
-   \end{itemize}
-   \vspace{10mm}
    \item \wpj \& \ttbar events
    \begin{itemize}
    \item Lost-Lepton Background
    \item Isolated Track
          \\(Arne-Rasmus Dr\"ager)
    \end{itemize}
+   \vspace{10mm}
+      \item \ZInvJets events\\
+   \begin{itemize}
+    \item \Zll (Troy Mulholland)
+    \item \photonJets (Andrew Whitbeck)
+   \end{itemize}
+
    \end{itemize}
   \end{column}
    \begin{column}{0.5\textwidth}
-      \begin{overpic}[width=0.70\textwidth]{figures/ZInvis.png}\end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/LostLepton.png}\end{overpic}
       \\
       \vspace{5mm}
-      \begin{overpic}[width=0.70\textwidth]{figures/LostLepton.png}\end{overpic}
+      \begin{overpic}[width=0.70\textwidth]{figures/ZInvis.png}\end{overpic}
    \end{column}
 \end{columns}
 \end{frame}
@@ -288,7 +290,7 @@ Closure test for the lost-lepton method:\\
   \end{itemize}
 
  \end{itemize}
- False rejection check by matching gen lepton to isolated track.
+ Check false rejection rate by matching gen lepton to isolated track.
  \begin{itemize}
   \item Criteria: $\deltaR$ \& $\pt(\text{Lep})$
  \end{itemize}
@@ -347,7 +349,7 @@ Closure test for the lost-lepton method:\\
                      & Isolated Tracks[\%]    & Isolated Leptons[\%] & Improvement[\%]     \\  \hline
         Muon         &16990.1  [73\%]           & 12067.9 [52\%]         &40\%              \\
         Electron     &16865.0 [72\%]           & 13880.7 [60\%]        &21\%            \\
-        Tau          &6221.9 [41\%]            & 0 [0\%]                &-           \\
+        Had Tau      &6221.9 [41\%]            & 0 [0\%]                &-           \\
         \hline
     \end{tabular}
  \item False \ttbar \& \wpj rejection: $\sim 8\%$ ($\sim 2\%$ isolated lepton)
@@ -400,6 +402,10 @@ Closure test for the lost-lepton method:\\
 \subsection{Efficiencies \& Purity}
 \begin{frame}
 \frametitle{Efficiencies \& purity obtained via a Tag \& Probe method}
+\begin{itemize}
+ \item Samples: DYJetsToLL M-50 HT binned \& TTJets (25ns PU20)
+\end{itemize}
+
   \begin{columns}
     \begin{column}{0.33\textwidth}
      Efficiency:
@@ -441,6 +447,9 @@ Closure test for the lost-lepton method:\\
 \subsection{\Zll \met Closure}
 \begin{frame}
  \frametitle{Normalized \met distribution for 0 and 1 CSVM b-jet}
+ \begin{itemize}
+ \item Samples: DYJetsToLL M-50 HT binned, ZJetsToNuNu HT binned \& TTJets (25ns PU20)
+\end{itemize}
  \begin{overpic}[width=0.48\textwidth]{figures/ZwithLepLep/FermilabWorkshop/MET_scaled_0.pdf}
     %\put(60,53){\rotatebox{0}{\scriptsize Pass}}
      \end{overpic}
@@ -505,8 +514,8 @@ Closure test for the lost-lepton method:\\
  \begin{itemize}
   \item Determine and apply photon reconstruction ($\epsilon_{\text{ID}}$) and isolation efficiency ($\epsilon_{\text{Iso}}$)
   \item Correct for $\gamma$ acceptance ($A$)
-  \item Remove $\gamma$ from event and recompute search variables
   \item Apply Z/$\gamma$ ratio correction parametrized in \MHT \& \NJets
+  \item Remove $\gamma$ from event and recompute search variables
  \end{itemize}
 \end{itemize}
 
@@ -516,7 +525,7 @@ N_{Z\to\nu\bar\nu\text{+jets}}^{\text{corr}} (\HT, \MHT, \NJets) =
                                                          (\MHT,\NJets) 
                                                         \times
                                                        %\left[
-                                                       \frac{\RZmumugamma^{\text{Corr}}}{\RZmumugamma^{\text{MC}}} \times$\\
+                                                       \textcolor{gray}{\frac{\RZmumugamma^{\text{Corr}}}{\RZmumugamma^{\text{MC}}} \times}$\\
                                                        \begin{center}
                                                         $ N_{\gamma\text{+jets}}^{\text{corr}} (\HT,\MHT,\NJets)$
                                                        \end{center}
@@ -559,7 +568,11 @@ N_{Z\to\nu\bar\nu\text{+jets}}^{\text{corr}} (\HT, \MHT, \NJets) =
 %--------------------------------------------------
 \subsection{\photonJets - \HT, \MHT \& \NJets Distributions}
 \begin{frame}
-\frametitle{Comparison of raw \HT, \MHT \& \NJets: \photonJets to \ZInv}
+\frametitle{Comparison of \HT, \MHT \& \NJets: \photonJets to \ZInv}
+\begin{itemize}
+ \item  Necessary ingredient for $R^{\text{MC}}_{Z(\nu\bar\nu)/\gamma} (\MHT,\NJets)$
+\end{itemize}
+
     \begin{columns}
    \begin{column}{0.33\textwidth}
   \begin{overpic}[width=1\textwidth]{figures/ZwithGamma/Fermilab/rZgamma_vs_HT.eps} \end{overpic}
@@ -574,10 +587,10 @@ N_{Z\to\nu\bar\nu\text{+jets}}^{\text{corr}} (\HT, \MHT, \NJets) =
 \begin{itemize}
  \item Using gen photon information to remove reconstructed jet containing photon.
  \item Rather flat ratio in \HT, \NJets with small turn on in \MHT as expected.
- \item Necessary ingredient for $R^{\text{MC}}_{Z(\nu\bar\nu)/\gamma} (\MHT,\NJets)$
  \item Extend to exclusive b-jet bins: $R^{\text{MC}}_{Z(\nu\bar\nu)/\gamma}$ needs to be well understood. 
- \item Use $\frac{\RZmumugamma^{\text{Corr}}}{\RZmumugamma^{\text{MC}}}$
-                                                         
+ \begin{itemize}
+  \item Include $\frac{\RZmumugamma^{\text{Data}}}{\RZmumugamma^{\text{MC}}}$ as a fucntion of b-tags.
+ \end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -588,25 +601,25 @@ N_{Z\to\nu\bar\nu\text{+jets}}^{\text{corr}} (\HT, \MHT, \NJets) =
 \begin{itemize}
  \item Lost-Lepton
  \begin{itemize}
-  \item Closure test has been performed showing good agreement between expectation and prediction
-  \item Good results on extending the lost-lepton method to exclusive BTag bins
+  \item Closure test has been performed showing good agreement between expectation and prediction.
+  \item Good results on extending the lost-lepton method to exclusive BTag bins.
  \end{itemize}
  \item Isolated Tracks
  \begin{itemize}
-  \item \ttbar and \wpj background reduction about 61\%
-  \item Increase in false rejecting events $\sim8\%$ ($\sim2\%$ isolated lepton)
-  \item Major impact on \ttbar and \wpj background estimation methods
+  \item \ttbar and \wpj background reduction about 61\%.
+  \item Increase in false rejecting events $\sim8\%$ ($\sim2\%$ isolated lepton).
+  \item Major impact on \ttbar and \wpj background estimation methods.
  \end{itemize}
   \item \photonJets
  \begin{itemize}
-  \item Photon efficiencies have been obtained
-  \item Ratio of \ZInv / $\gamma$ using truth information in good agreement with expectation
+  \item Photon efficiencies have been obtained.
+  \item Ratio of \ZInv / $\gamma$ using truth information in good agreement with expectation.
  \end{itemize}
  \item \Zll
  \begin{itemize}
-  \item Electron and muon purity \& efficiencies determined using a Tag \& Probe method
-  \item Normalized \met distribution show reasonable agreement
-  \item Using scaling factor derived from inverted \met\& \HT DY region shows good closure for high b-tag regions
+  \item Electron and muon purity \& efficiencies determined using a Tag \& Probe method.
+  \item Normalized \met distribution show reasonable agreement.
+  \item Using scaling factor derived from inverted \met\& \HT DY region shows good closure for b-tag regions.
  \end{itemize}
 
  
