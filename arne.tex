@@ -56,7 +56,7 @@
 %RA2/b team:\\
 %\tiny Baylor: Ahmad Borzou, Kenichi Hatakeyama, Honguan Liu\\
 %   FNAL: Jim Hirschauer, Nhan Viet Tran Andrew Whitbeck\\
-%    IISER: Kunal Kothekar, Seema Scharma, Bibhuprasak Mahakud\\ 
+%    IISER: Kunal Kothekar, Seema Scharma, Bibhuprasak Mahakud\\
 %    Hambug: Arne-Rasmus Dr\"ager, Kristin Heine, Simon Kurz, Marek Niedziela, Christian Sander\\
 %    Cornell: Josh Thompson\\
 %    Texas A\&M: Keith Ulmer, Rishi Patel\\
@@ -91,7 +91,7 @@
      \large RA2
      \normalsize
      \begin{itemize}
-      \item $\HT >500 \gev$ 
+      \item $\HT >500 \gev$
       \begin{itemize}
        \item Jets: $\pt>50\gev$, $|\eta|<2.5$
       \end{itemize}
@@ -113,7 +113,7 @@
      \large RA2b
      \normalsize
              \begin{itemize}
-      \item $\HT >400 \gev$ 
+      \item $\HT >400 \gev$
       \item $\met >125 \gev$
       \item Jet(1,2,3) $\pt>70,70,50\gev$
       \item $\BTag\ge1$ CSVM ($>0.679$) $\pt>30\gev$
@@ -161,6 +161,209 @@
 \end{columns}
 \end{frame}
 % --------------------------------------------------
+\section{Lost-Lepton Background }
+\begin{frame}
+  \begin{center}
+    \huge Lost-Lepton Background\\ \small(Original: RA2)
+    
+  \end{center}
+\end{frame}
+
+\subsection{Basic concept}
+\begin{frame}
+  \frametitle{Mainly \ttbar and \wpj events where prompt electrons or muons are lost}
+   \begin{figure}
+ \centering
+  \includegraphics[width = 0.65\textwidth]{figures/lost-lepton/lepton_veto_sketch.png}
+%  \caption{Awesome figure}
+ \end{figure}
+      \begin{itemize}
+      \item Select a control sample (CS) of exactly one well isolated $\mu$ within the acceptance
+        \begin{itemize}
+        \item Weight each CS event according to efficiencies for each identification step (efficiencies determined from \ttbar and \wpj sample)
+        \item Isolation and reconstruction efficiency in \HT, \MHT and \NJets ($B_{Tag}$) parametrized
+        \item Acceptance in \MHT and \NJets ($B_{Tag}$)
+        \end{itemize}
+      \end{itemize}
+\end{frame}
+% --------------------------------------------------
+\subsection{Muon Control Sample Corrections }
+\begin{frame}
+\begin{itemize}
+ \item Signal and other SM processes can contribute to $\mu$ control sample
+ \item Suppress contamination by requiring trans. mass $\mt < 100 \gev$ \\
+\end{itemize}
+\vspace{0.5cm}
+\hspace{0.5cm}$m_{T} = \sqrt{2 \cdot p_{T}(\mu)\cdot \met (1 - \cos(\Delta \Phi))}$
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+
+      \begin{itemize}
+      \item Removes about 15\% of $\mu$ CS due to:
+        \begin{itemize}
+        \item di-leptonic \ttbar decays
+        \item Mismeasured jets
+        \item Highly virtual W
+        \end{itemize}
+      \begin{centering}
+      \end{centering}
+      \item Correction as a function of \MHT, \NJets applied
+      \end{itemize}
+      \vspace{0.3cm}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \centering
+    %  \begin{overpic}[width=0.8\textwidth]{figures/lost-lepton/ControlSample__MTW__MCPrMTWDiLepTTbar+MCPrMTWDiLepW__mu_control_sample.pdf}
+       \begin{overpic}[width=0.8\textwidth]{figures/lost-lepton/ControlSample__MTW__MCPrMTWDiLepW+MCPrMTWDiLepTTbar__mu_control_sample.pdf}
+       \put(41.52,83){\color{black}\line(0,-1){67}}
+    %\put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+      \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item Contribution of di leptonic \ttbar events $3\%$
+   \begin{itemize}
+    \item Separate estimation leading to contribution of $1\%$ to total background
+   \end{itemize}
+
+  \end{itemize}
+
+\end{frame}
+% --------------------------------------------------
+
+\subsection{Closure Test}
+\begin{frame}
+
+Closure test for the lost-lepton method:\\
+\begin{itemize}
+ \item $\HT > 500 \gev$ , $\MHT>200 \gev$, $\NJets\ge 3$ , $\Delta\Phi_{1,2,3}>$0.5, 0.5, 0.3
+\end{itemize}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__HT__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
+     \end{overpic}
+           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NJets__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__MHT__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
+     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+     \end{overpic}
+     \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__BTags__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
+%       \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
+      \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item Method closes well (exp $30462.9 \pm 60.0$, pred $30128.1 \pm 80.9$) for\\ 
+    \HT, \MHT, \NJets \& \BTag
+  \end{itemize}
+
+\end{frame}
+% --------------------------------------------------
+
+
+% --------------------------------------------------
+\section{Isolated Track vs Lepton Veto }
+\begin{frame}
+\frametitle{Aim: Improve prompt lepton rejection from  \ttbar and \wpj events}
+ \begin{itemize}
+  \item Isolated track definition:
+  \begin{itemize}
+  \item Select track: $\pt(\text{track})>10\gev$ \& $\dz<0.05$mm good vertex
+   \item Require $\Sigma \pt(\text{Tracks})/\pt(\text{track})<0.1$ for $\pt>10\gev$, $\deltaR<0.3$ tracks
+  \end{itemize}
+  \item Isolated muons:
+  \begin{itemize}
+   \item $p_{T}>10 \gev$ \& $|\eta|<2.4$
+   \item  Isolation $\text{Iso}_{\text{Rel}}<20\%$ ($\Delta R=0.4$)
+  \end{itemize}
+    \item Isolated electrons:
+  \begin{itemize}
+   \item $p_{T}>10 \gev$ \& $|\eta|<2.5$
+   \item  Isolation $\text{Iso}_{\text{Rel}}<20\%$ ($\Delta R=0.3$)
+  \end{itemize}
+
+ \end{itemize}
+ False rejection check by matching gen lepton to isolated track.
+ \begin{itemize}
+  \item Criteria: $\deltaR$ \& $\pt(\text{Lep})$
+ \end{itemize}
+
+
+\end{frame}
+
+
+
+% --------------------------------------------------
+
+\begin{frame}
+\frametitle{Isolated Track vs Isolated Electron \& Muon Lepton Veto}
+  \begin{columns}
+    \begin{column}{0.33\textwidth}
+     \centering
+      \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/rejection/IsoTrackStudies__HT__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}
+     \end{overpic}
+%            \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__HT__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+%      \end{overpic}
+           \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__HT__LeptonEx_vs_ITExFalse+ITExTrue__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf} \end{overpic}
+
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/rejection/IsoTrackStudies__MTW__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}
+      \end{overpic}
+%  \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__MTW__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+%       \end{overpic}
+            \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__MTW__LeptonEx_vs_ITExFalse+ITExTrue__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf} \end{overpic}
+
+    \end{column}
+        \begin{column}{0.33\textwidth}
+      \centering
+      \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/rejection/IsoTrackStudies__NVtx__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf} \end{overpic}
+%       \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__NVtx__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf} \end{overpic}
+      \begin{overpic}[width=0.93\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__NVtx__LeptonEx_vs_ITExFalse+ITExTrue__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf} \end{overpic}
+      \end{column}
+  \end{columns}
+\begin{itemize}
+ \item Isolated track veto shows better performance than lepton veto and good enough resolution for \mt cut.
+
+\end{itemize}
+\vspace{0.5cm}
+\end{frame}
+
+
+% --------------------------------------------------
+\begin{frame}
+\frametitle{Isolated Track Conclusion}
+\begin{itemize}
+ \item Isolated Tack veto performances better than isolated lepton veto
+ \item Rejection:
+  \begin{tabular}{|r|l|l|l|l}
+        \hline
+                     & Isolated Tracks[\%]    & Isolated Leptons[\%] & Improvement[\%]     \\  \hline
+        Muon         &16990.1  [73\%]           & 12067.9 [52\%]         &40\%              \\
+        Electron     &16865.0 [72\%]           & 13880.7 [60\%]        &21\%            \\
+        Tau          &6221.9 [41\%]            & 0 [0\%]                &-           \\
+        \hline
+    \end{tabular}
+ \item False \ttbar \& \wpj rejection: $\sim 8\%$ ($\sim 2\%$ isolated lepton)
+ \item Big effect on background estimation methods: Lost-Lepton, Had Tau
+ \item Revisiting estimation method:
+ \begin{itemize}
+  \item Using single isolated muons use Lost-Lepton method determine amount of leptons calculate lost tracks using track efficiency
+  \item Assign to each isolated track probability of being muon, electron or tau apply isolated track efficiency (similar to Lost-Lepton method)
+ \end{itemize}
+
+
+\end{itemize}
+
+\end{frame}
+% --------------------------------------------------
+
 \section{\ZInvJets}
 \begin{frame}
   \begin{center}
@@ -173,16 +376,17 @@
 
 \subsection{\Zll - Introduction}
 \begin{frame}
-\frametitle{Estimation of \ZInv  Using \Zll Events}
+\frametitle{Estimation of \ZInv  Using \Zll Events \small(Original: RA2b)}
 \begin{itemize}
  \item Main Idea: Remove four-momentum of reconstructed \Zll events in selection (except lepton veto).\\ Recompute relevant quantities (e.q. \met, $\Delta\Phi_{N}^{min}$)
  \item Work flow:
  \begin{itemize}
-  \item Correct for branching fraction ($R = 5.95$)
-  \item Increase statistics of \Zll events by loosening b-jet tagger and applying a scale factor ($F$) to each b-jet bin
-  \item Measure efficiency ($\epsilon$) of reconstructing \Zll event with a Tag\&Probe method (parametrized in $\met$ \& $\HT$)
+   \item Measure efficiency ($\epsilon$) of reconstructing \Zll event with a Tag\&Probe method (parametrized in $\met$ \& $\HT$)
   \item Determine and correct for purity ($P$) of \Zll selection
+  \item Correct for branching fraction ($R = 5.95$)
   \item Apply lepton acceptance corrections ($A$) (parametrized in $\met$)
+  \item Increase statistics of \Zll events by loosening b-jet tagger and applying a scale factor ($F$) to each b-jet bin
+
  \end{itemize}
 \end{itemize}
 \begin{block}{}
@@ -198,33 +402,35 @@
 \frametitle{Efficiencies \& purity obtained via a Tag \& Probe method}
   \begin{columns}
     \begin{column}{0.33\textwidth}
-
+     Efficiency:
+     \begin{itemize}
+      \item Compare failing to passing probe lepton
+     \end{itemize}
      Purity:
      \begin{itemize}
       \item Find shape from loosened selection
       \item Compare Z peak integral to background
      \end{itemize}
-     Efficiency:
-     \begin{itemize}
-      \item Compare failing to passing probe lepton
-     \end{itemize}
+
 
 
     \end{column}
     \begin{column}{0.33\textwidth}
     \begin{overpic}
-     [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zee_mass.pdf}
+          [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zmm_pass.pdf}
     \end{overpic}\\
     \begin{overpic}
-     [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zmm_pass.pdf}
+     [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zee_mass.pdf}
     \end{overpic}
     \end{column}
     \begin{column}{0.33\textwidth}
     \begin{overpic}
-     [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zee_mass_sel.pdf}
+         [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zmm_fail.pdf}
+
     \end{overpic}\\
     \begin{overpic}
-     [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zmm_fail.pdf}
+          [width=0.95\textwidth]{figures/ZwithLepLep/FermilabWorkshop/Zee_mass_sel.pdf}
+
     \end{overpic}
     \end{column}
    \end{columns}
@@ -236,14 +442,14 @@
 \begin{frame}
  \frametitle{Normalized \met distribution for 0 and 1 CSVM b-jet}
  \begin{overpic}[width=0.48\textwidth]{figures/ZwithLepLep/FermilabWorkshop/MET_scaled_0.pdf}
-	%\put(60,53){\rotatebox{0}{\scriptsize Pass}}
+    %\put(60,53){\rotatebox{0}{\scriptsize Pass}}
      \end{overpic}
  \begin{overpic}[width=0.48\textwidth]{figures/ZwithLepLep/FermilabWorkshop/MET_scaled_1.pdf}
-	%\put(60,53){\rotatebox{0}{\scriptsize Pass}}
+    %\put(60,53){\rotatebox{0}{\scriptsize Pass}}
      \end{overpic}\\
  \begin{itemize}
-  \item Leptons corrected for reconstruction efficiencies ($0.929 < \epsilon < 0.975$) and acceptance ($0.632 < A< 0.886$) 
-  \item Overall reasonable agreement between expectation and prediction 
+  \item Leptons corrected for reconstruction efficiencies ($0.929 < \epsilon < 0.975$) and acceptance ($0.632 < A< 0.886$)
+  \item Overall reasonable agreement between expectation and prediction
  \end{itemize}
 
 \end{frame}
@@ -253,14 +459,14 @@
 \begin{frame}
  \frametitle{Scaling factor for b-jet regions}
  \begin{itemize}
-  \item Increase statistics by loosen cut on b-tagger to CSVL 
+  \item Increase statistics by loosen cut on b-tagger to CSVL
   \item Scale using independent control sample (QCD $\mindeltaphi<4$\\ \& MET/HT inverted DY)
  \end{itemize}
     \begin{columns}
     \begin{column}{0.5\textwidth}
      \begin{itemize}
       \item  8\tev QCD enriched sample agreed in data but not in MC
-      \item Check will be done once data is availabe. For now inverted MET/HT DY samples used to calcuate scale factors
+      \item Check will be done once data is available. For now inverted MET/HT DY samples used to calculate scale factors
      \end{itemize}
 
             \Zee prediction using inverted MET/HT sample
@@ -268,11 +474,11 @@
 
            \begin{tabular}{|r|l|l|}
         \hline
-        b-jets  & Prediction & Expectation \\ 
+        b-jets  & Prediction & Expectation \\
         \hline
-	1	& $840.3\pm 32.3$ & 834\\
-	2	& $332.0\pm 18.8$ & 365\\
-	3	& $15.71\pm 4.39$ & 16\\
+    1    & $840.3\pm 32.3$ & 834\\
+    2    & $332.0\pm 18.8$ & 365\\
+    3    & $15.71\pm 4.39$ & 16\\
         \hline
     \end{tabular}
     \end{column}
@@ -291,70 +497,67 @@
 % --------------------------------------------------
 \subsection{\photonJets - Introduction}
 \begin{frame}
-\frametitle{\ZInv estimation using \photonJets events}
+\frametitle{\ZInv estimation using \photonJets events \small(Original: RA2)}
 %\frametitle{Did We Discover the Standard-Model Higgs?}
 \begin{itemize}
  \item Main Idea: Exploit kinematic similarities of Z/$\gamma$ at high boson \pt.
  \item Work flow:
  \begin{itemize}
+  \item Determine and apply photon reconstruction ($\epsilon_{\text{ID}}$) and isolation efficiency ($\epsilon_{\text{Iso}}$)
+  \item Correct for $\gamma$ acceptance ($A$)
   \item Remove $\gamma$ from event and recompute search variables
   \item Apply Z/$\gamma$ ratio correction parametrized in \MHT \& \NJets
-  \item Correct for $\gamma$ acceptance and reconstruction efficiency ($\epsilon_{\text{ID/Iso}}$)
-  \item Apply lepton acceptance corrections ($A$)
  \end{itemize}
 \end{itemize}
-  \begin{center}
-  $\text{N }(\ZInv) = \text{N }(\gamma)\cdot R(\ZInv/\gamma)\cdot P\xspace/ (A\cdot \epsilon_{\text{ID/Iso}})$
-  \end{center}
-\begin{block}{}
-\centering
-% SAY: 2 ways to proceed
-Study of photon (slimmedPhotons) $\epsilon_{\text{ID/Iso}}$ efficiencies \& raw \HT and \MHT
-\end{block}
+
+$
+N_{Z\to\nu\bar\nu\text{+jets}}^{\text{corr}} (\HT, \MHT, \NJets) =
+                                                        R^{\text{MC}}_{Z(\nu\bar\nu)/\gamma}
+                                                         (\MHT,\NJets) 
+                                                        \times
+                                                       %\left[
+                                                       \frac{\RZmumugamma^{\text{Corr}}}{\RZmumugamma^{\text{MC}}} \times$\\
+                                                       \begin{center}
+                                                        $ N_{\gamma\text{+jets}}^{\text{corr}} (\HT,\MHT,\NJets)$
+                                                       \end{center}
+%   $\text{N }(\ZInv) = \text{N }(\gamma)\cdot R(\ZInv/\gamma)\cdot P\xspace/ (A\cdot \epsilon_{\text{ID/Iso}})$
+
+ \begin{block}{}
+ \centering
+% % SAY: 2 ways to proceed
+ \begin{itemize}
+  \item Study photons (slimmedPhotons) in 13 TeV MC (25 ns BX \& 20PU) using \photonJets ($\HT>400\gev$ samples)
+ 
+ \end{itemize}
+ \end{block}
 
 \end{frame}
-\subsection{\photonJets - Photon ID}
+\subsection{\photonJets - Photon Efficiencies}
 \begin{frame}
-%\frametitle{Comparison $\gamma$ properties}
-   \begin{itemize}
-    \item Photon ID variables:
-   \end{itemize}
-  \begin{columns}
-   \begin{column}{0.33\textwidth}
-     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_hOverE-eps-converted-to.pdf} \end{overpic}
-   \end{column}
-   \begin{column}{0.33\textwidth}
-     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_pixelSeed-eps-converted-to.pdf} \end{overpic}
-   \end{column}
-   \begin{column}{0.33\textwidth}
-     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_sigmaIetaIeta-eps-converted-to.pdf} 
-      \put(35,94){\rotatebox{0}{\scriptsize Barrel only}}
-      \put(90,110){\rotatebox{-45}{\scriptsize \Large Andrew}}
-      \end{overpic}
+\frametitle{Photon acceptance, reconstruction and isolation efficiencies}
+\begin{center}
+ $N_{\gamma\text{+jets}}^{\text{corr}} = \frac{N_{\gamma\text{+jets}}^{Obs.}\cdot \textcolor{gray}{\epsilon^{Purity}}}{A \cdot \epsilon_{ID}\cdot \epsilon_{Iso} \cdot \textcolor{gray}{SF_{Data/MC}}}$
+\end{center}
 
-   \end{column}
-
-  \end{columns}
-  \begin{itemize}
-   \item Isolation of photons passing ID requirements \& $p_{T}^{\gamma}>100\gev$
-  \end{itemize}
-
-    \begin{columns}
+     \begin{columns}
    \begin{column}{0.33\textwidth}
-     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoCharged-eps-converted-to.pdf} \end{overpic}
-   \end{column}
+  \begin{overpic}[width=1\textwidth]{figures/ZwithGamma/Fermilab/acceptanceEfficiency_25ns20PU.pdf} \end{overpic}
+ \end{column}
+  \begin{column}{0.33\textwidth}
+  \begin{overpic}[width=1\textwidth]{figures/ZwithGamma/Fermilab/IDefficiency_25ns20PU.pdf} \end{overpic}
+ \end{column}
    \begin{column}{0.33\textwidth}
-     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoNeutral-eps-converted-to.pdf} \end{overpic}
-   \end{column}
-   \begin{column}{0.33\textwidth}
-     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoPhoton-eps-converted-to.pdf} \end{overpic}
-   \end{column}
-
-  \end{columns}
+  \begin{overpic}[width=1\textwidth]{figures/ZwithGamma/Fermilab/IsolationEfficiencies_25ns20PU.pdf} \end{overpic}
+ \end{column}
+\end{columns}
+\begin{itemize}
+ \item Acceptance, reconstruction \& isolation efficiencies as a function of \NJets for different \MHT regions are shown.
+ \item An increase for all efficiencies can be seen for higher \MHT values.
+\end{itemize}
 
 \end{frame}
 %--------------------------------------------------
-\subsection{\photonJets - RAW \HT, \MHT \& \NJets}
+\subsection{\photonJets - \HT, \MHT \& \NJets Distributions}
 \begin{frame}
 \frametitle{Comparison of raw \HT, \MHT \& \NJets: \photonJets to \ZInv}
     \begin{columns}
@@ -369,233 +572,15 @@ Study of photon (slimmedPhotons) $\epsilon_{\text{ID/Iso}}$ efficiencies \& raw 
  \end{column}
 \end{columns}
 \begin{itemize}
- \item RAW DEFINITION 
- \item Flat ratio for \HT. Small increase at low \MHT WHAT STATEMENT
+ \item Using gen photon information to remove reconstructed jet containing photon.
+ \item Rather flat ratio in \HT, \NJets with small turn on in \MHT as expected.
+ \item Necessary ingredient for $R^{\text{MC}}_{Z(\nu\bar\nu)/\gamma} (\MHT,\NJets)$
+ \item Extend to exclusive b-jet bins: $R^{\text{MC}}_{Z(\nu\bar\nu)/\gamma}$ needs to be well understood. 
+ \item Use $\frac{\RZmumugamma^{\text{Corr}}}{\RZmumugamma^{\text{MC}}}$
+                                                         
 \end{itemize}
 \end{frame}
-% --------------------------------------------------
-\section{Lost-Lepton Background }
-\begin{frame}
-  \begin{center}
-    \huge Lost-Lepton Background
-    
-  \end{center}
-\end{frame}
 
-\subsection{Basic concept}
-\begin{frame}
-  \frametitle{Mainly \ttbar and \wpj events where prompt electrons or muons are lost}
-   \begin{figure}
- \centering
-  \includegraphics[width = 0.65\textwidth]{figures/lost-lepton/lepton_veto_sketch.png}
-%  \caption{Awesome figure}
- \end{figure}
-      \begin{itemize}
-      \item Select a control sample (CS) of exactly one well isolated $\mu$ within the acceptance
-        \begin{itemize}
-        \item Weight each CS event according to efficiencies for each identification step (efficiencies determined from \ttbar and \wpj sample)
-        \item Isolation and reconstruction efficiency in \HT, \MHT and \NJets parametrized
-        \item Acceptance in \MHT and \NJets
-        \end{itemize}
-      \end{itemize}
-\end{frame}
-% --------------------------------------------------
-\subsection{Muon Control Sample Corrections }
-\begin{frame}
-\begin{itemize}
- \item Signal and other SM processes can contribute to $\mu$ control sample
- \item Suppress contamination by requiring trans. mass $\mt < 100 \gev$ \\
-\end{itemize}
-\vspace{0.5cm}
-$m_{T} = \sqrt{2 \cdot p_{T}(\mu)\cdot \met (1 - \cos(\Delta \Phi))}$
-
-  \begin{columns}
-    \begin{column}{0.4\textwidth}
-
-      \begin{itemize}
-      \item Removes about 15\% of $\mu$ CS due to:
-        \begin{itemize}
-        \item di-leptonic \ttbar decays
-        \item Mismeasured jets
-        \item Highly virtual W
-        \end{itemize}
-      \begin{centering}
-      \end{centering}
-      \item Correction as a function of \MHT, \NJets applied
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.6\textwidth}
-      \centering
-    %  \begin{overpic}[width=0.8\textwidth]{figures/lost-lepton/ControlSample__MTW__MCPrMTWDiLepTTbar+MCPrMTWDiLepW__mu_control_sample.pdf}
-       \begin{overpic}[width=0.8\textwidth]{figures/lost-lepton/ControlSample__MTW__MCPrMTWDiLepW+MCPrMTWDiLepTTbar__mu_control_sample.pdf}
-       \put(41.52,83){\color{black}\line(0,-1){67}}
-	%\put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
-      \end{overpic}
-    \end{column}
-  \end{columns}
-  \begin{itemize}
-   \item Contribution of di leptonic \ttbar events $3\%$ 
-   \begin{itemize}
-    \item Separate estimation leading to contribution of $1\%$ to total background
-   \end{itemize}
-
-  \end{itemize}
-
-\end{frame}
-% --------------------------------------------------
-
-\subsection{Closure Test}
-\begin{frame}
-
-Closure test for the lost-lepton method:\\
-\begin{itemize}
- \item $\HT > 500 \gev$ , $\MHT>100 \gev$, $\NJets\ge 3$ , $\Delta\Phi_{1,2,3}>$0.5, 0.5, 0.3
-\end{itemize}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__HT__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
-     \end{overpic}
-           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NJets__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__MHT__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
-	 %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
-     \end{overpic}
-      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLep_vs_MCEx__csa_Baseline.pdf}
-      \end{overpic}
-    \end{column}
-  \end{columns}
-  \begin{itemize}
-   \item Good agreement between expectation ($30462.9 \pm 60.0$) and prediction ($30128.1 \pm 80.9$) for all search variables
-  \end{itemize}
-
-\end{frame}
-% --------------------------------------------------
-\subsection{Closure Test: BTag}
-\begin{frame}
-
-Preliminary closure: Efficiencies binned in BTags instead of \NJets\\
-\begin{itemize}
- \item $\HT > 500 \gev$ , $\MHT>100 \gev$, $\NJets\ge 3$ , $\Delta\Phi_{1,2,3}>$0.5, 0.5, 0.3
-\end{itemize}
-
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-     \centering
-      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__HT__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
-     \end{overpic}
-           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__BTags__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \centering
-            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__MHT__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
-	 %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
-     \end{overpic}
-      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
-      \end{overpic}
-    \end{column}
-  \end{columns}
-  \begin{itemize}
-   \item Good closure \HT, \MHT and BTags\\ Exp: $30462.9 \pm 60.0$ pre: $31071.1  \pm 84.9$
-  \end{itemize}
-
-\end{frame}
-
-% --------------------------------------------------
-\section{Isolated Track vs Lepton Veto }
-\begin{frame}
-\frametitle{Aim: Improve prompt lepton rejection from  \ttbar and \wpj events while keeping signal efficiency high}
- \begin{itemize}
-  \item Isolated track definition:
-  \begin{itemize}
-  \item Select track: $\pt>10\gev$ \& $\dz<0.05$mm good vertex
-   \item Require $\Sigma \pt(\text{Tracks})<0.1$ for $\pt>10\gev$, $\deltaR<0.3$ tracks
-  \end{itemize}
-  \item Isolated muons: 
-  \begin{itemize}
-   \item $p_{T}>10 \gev$ \& $|\eta|<2.4$ 
-   \item  Isolation $\text{Iso}_{\text{Rel}}<20\%$ ($\Delta R=0.4$) 
-  \end{itemize}
-    \item Isolated electrons: 
-  \begin{itemize}
-   \item $p_{T}>10 \gev$ \& $|\eta|<2.5$ 
-   \item  Isolation $\text{Iso}_{\text{Rel}}<20\%$ ($\Delta R=0.3$) 
-  \end{itemize}
-
- \end{itemize}
- Check falls rejection by checking matching of gen lepton to isolated track
- \begin{itemize}
-  \item $\deltaR$ \& $\pt(\text{Lep})$
- \end{itemize}
-
-
-\end{frame}
-
-
-
-% --------------------------------------------------
-
-\begin{frame}
-\frametitle{Isolated Track vs Isolated Electron \& Muon Lepton Veto}
-  \begin{columns}
-    \begin{column}{0.33\textwidth}
-     \centering
-      \begin{overpic}[width=0.95\textwidth]{figures/IsolatedTrack/rejection/IsoTrackStudies__HT__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}
-     \end{overpic}
-           \begin{overpic}[width=0.95\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__HT__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
-     \end{overpic}
-    \end{column}
-    \begin{column}{0.33\textwidth}
-      \centering
-      \begin{overpic}[width=0.95\textwidth]{figures/IsolatedTrack/rejection/IsoTrackStudies__MTW__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}
-      \end{overpic}
- \begin{overpic}[width=0.95\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__MTW__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
-      \end{overpic}
-    \end{column}
-        \begin{column}{0.33\textwidth}
-      \centering
-      \begin{overpic}[width=0.95\textwidth]{figures/IsolatedTrack/rejection/IsoTrackStudies__NVtx__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf} \end{overpic}
-      \begin{overpic}[width=0.95\textwidth]{figures/IsolatedTrack/purity/IsoTrackStudies__NVtx__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf} \end{overpic}
-    \end{column}
-  \end{columns}
-\begin{itemize}
- \item Isolated Tracks: $\Sigma \pt(\text{Tracks})<0.1$, ($\pt>15\gev$, $\deltaR<0.3$ )
-
-\end{itemize}
-\vspace{0.5cm}
-\end{frame}
-
-
-% --------------------------------------------------
-\begin{frame}
-\frametitle{Isolated Track Conclusion}
-\begin{itemize}
- \item Isolated Tack veto performances better than isolated lepton veto
- \item Rejection:
-  \begin{tabular}{|r|l|l|l|}
-        \hline
-                     & Isolated Tracks    & Isolated Leptons         & Improvement[\%]     \\  \hline
-        Muon         &17247.1                            & 13416.7            &28\%              \\ 
-        Electron     &17179.1                           & 15383.2          &12\%            \\
-        Tau          &5594.0                          & 0          &-           \\ 
-        \hline
-    \end{tabular}
- \item Falls rejection: ~3\% (~1.8\% isolated lepton)
- \item Big effect on background estimation methods: Lost-Lepton, Had Tau
- \item Revisiting estimation method:
- \begin{itemize}
-  \item Using single isolated muons use Lost-Lepton method determine amount of leptons calculate lost tracks using track efficiency
-  \item Assign to each isolated track probability of being muon, electron or tau apply isolated track efficiency (similar to Lost-Lepton method)
- \end{itemize}
-
-
-\end{itemize}
-
-\end{frame}
 % --------------------------------------------------
 \section{Conclusion}
 \begin{frame}
@@ -604,24 +589,24 @@ Preliminary closure: Efficiencies binned in BTags instead of \NJets\\
  \item Lost-Lepton
  \begin{itemize}
   \item Closure test has been performed showing good agreement between expectation and prediction
-  \item Good results on extending the lost-lepton method to exclusive BTag bins 
+  \item Good results on extending the lost-lepton method to exclusive BTag bins
  \end{itemize}
  \item Isolated Tracks
  \begin{itemize}
-  \item \ttbar and \wpj background reduction about 65\%
-  \item Small increase in falls rejecting events ~3\% (~1.8\% isolated lepton)
+  \item \ttbar and \wpj background reduction about 61\%
+  \item Increase in false rejecting events $\sim8\%$ ($\sim2\%$ isolated lepton)
   \item Major impact on \ttbar and \wpj background estimation methods
  \end{itemize}
   \item \photonJets
  \begin{itemize}
-  \item Studies on photon properties have been performed
-  \item Investigated photon $\epsilon_{\text{ID/Iso}}$ agree well with 8\tev results
+  \item Photon efficiencies have been obtained
+  \item Ratio of \ZInv / $\gamma$ using truth information in good agreement with expectation
  \end{itemize}
  \item \Zll
  \begin{itemize}
   \item Electron and muon purity \& efficiencies determined using a Tag \& Probe method
-  \item Normalized \met distribution show reasonable agreement for differenet b-jet selections
-  \item Scaling from low to high b-tag region in good agreement withe expectation
+  \item Normalized \met distribution show reasonable agreement
+  \item Using scaling factor derived from inverted \met\& \HT DY region shows good closure for high b-tag regions
  \end{itemize}
 
  
@@ -629,6 +614,21 @@ Preliminary closure: Efficiencies binned in BTags instead of \NJets\\
 
 
 \end{frame}
+\begin{frame}
+   \begin{center}
+    \textbf{\Large Thanks to the RA2 \& RA2b team:}\\\medskip
+    \textbf{\large Baylor:} \normalsize Ahmad Borzou, Kenichi Hatakeyama, Hongxuan Liu\\
+    \textbf{\large FNAL:} \normalsize Jim Hirschauer, Nhan Viet Tran Andrew Whitbeck\\
+    \textbf{\large IISER:} \normalsize Kunal Kothekar, Seema Sharma, Bibhuprasak Mahakud\\
+    \textbf{\large U Hambug:} \normalsize \textbf {Arne-Rasmus Dr\"ager}, Kristin Heine, Simon Kurz, Marek Niedziela, Christian Sander\\
+    \textbf{\large Texas A\&M:} \normalsize Keith Ulmer, Rishi Patel\\
+    \textbf{\large U of Colorado:} \normalsize Bill Ford, Alessandro Gaz, Troy Mulholland, Kevin Stenson\\
+    \textbf{\large UC Riverside:} \normalsize Pawandeep Jandir, Bill Gary, Florent Lacroix, Owen Long, Hua Wei\\
+    \textbf{\large UC Santa Barbara:} \normalsize \textbf{Jack Bradmiller-Feld}, Jeff Richman, Manuel Franco Sevilla, Ana Ovcharova
+    \end{center}
+    
+\end{frame}
+
 % --------------------------------------------------
 % --------------------------------------------------
 % --------------------------------------------------
@@ -687,10 +687,41 @@ Preliminary closure: Efficiencies binned in BTags instead of \NJets\\
     \begin{column}{0.5\textwidth}
       \centering
       \begin{overpic}[width=0.95\textwidth]{figures/lost-lepton/MuonDiLepEff.pdf}
-	%\put(87,70){\rotatebox{-45}{\scriptsize \Large Arne}}
+    %\put(87,70){\rotatebox{-45}{\scriptsize \Large Arne}}
       \end{overpic}
     \end{column}
   \end{columns}
+\end{frame}
+% --------------------------------------------------
+\subsection{Closure Test: BTag}
+\begin{frame}
+
+Preliminary closure: Efficiencies binned in BTags instead of \NJets\\
+\begin{itemize}
+ \item $\HT > 500 \gev$ , $\MHT>100 \gev$, $\NJets\ge 3$ , $\Delta\Phi_{1,2,3}>$0.5, 0.5, 0.3
+\end{itemize}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__HT__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
+     \end{overpic}
+           \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__BTags__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+            \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__MHT__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
+     %     \put(90,90){\rotatebox{-45}{\scriptsize \Large Arne}}
+     \end{overpic}
+      \begin{overpic}[width=0.57\textwidth]{figures/lost-lepton/Closure__NVtx__MCPrMTWDiLepBTag_vs_MCEx__csa_Baseline.pdf}
+      \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item Good closure \HT, \MHT and BTags\\ Exp: $30462.9 \pm 60.0$ pre: $31071.1  \pm 84.9$
+  \end{itemize}
+
 \end{frame}
 % --------------------------------------------------
 
@@ -967,7 +998,7 @@ Efficiency determination via Tag \& Probe method
 \begin{itemize}
  \item Tag lepton: Nominal cuts $\pt>20\gev$
  \item Probe lepton: Any reconstructed lepton $\pt>17\gev$ and $|\eta|<2.5$
- \item Fit invariant mass of di-lepton system apply tag requirement 
+ \item Fit invariant mass of di-lepton system apply tag requirement
  \item Efficiency: passing / (passing+failing) (to be probed criteria)
 \end{itemize}
 \end{frame}
@@ -1013,8 +1044,88 @@ Efficiency determination via Tag \& Probe method
 \end{itemize}
 \end{frame}
 
+\subsection{\photonJets - Photon ID}
+\begin{frame}
+%\frametitle{Comparison $\gamma$ properties}
+   \begin{itemize}
+    \item Photon ID variables:
+   \end{itemize}
+  \begin{columns}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_hOverE-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_pixelSeed-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_sigmaIetaIeta-eps-converted-to.pdf}
+      \put(35,94){\rotatebox{0}{\scriptsize Barrel only}}
+      \put(90,110){\rotatebox{-45}{\scriptsize \Large Andrew}}
+      \end{overpic}
 
+   \end{column}
 
-\setcounter{framenumber}{21}
+  \end{columns}
+  \begin{itemize}
+   \item Isolation of photons passing ID requirements \& $p_{T}^{\gamma}>100\gev$
+  \end{itemize}
+
+    \begin{columns}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoCharged-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoNeutral-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoPhoton-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+
+  \end{columns}
+
+\end{frame}
+\subsection{\photonJets - Photon ID}
+\begin{frame}
+%\frametitle{Comparison $\gamma$ properties}
+   \begin{itemize}
+    \item Photon ID variables:
+   \end{itemize}
+  \begin{columns}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_hOverE-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_pixelSeed-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_sigmaIetaIeta-eps-converted-to.pdf}
+      \put(35,94){\rotatebox{0}{\scriptsize Barrel only}}
+      \put(90,110){\rotatebox{-45}{\scriptsize \Large Andrew}}
+      \end{overpic}
+
+   \end{column}
+
+  \end{columns}
+  \begin{itemize}
+   \item Isolation of photons passing ID requirements \& $p_{T}^{\gamma}>100\gev$
+  \end{itemize}
+
+    \begin{columns}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoCharged-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoNeutral-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+   \begin{column}{0.33\textwidth}
+     \begin{overpic}[width=0.8\textwidth]{figures/ZwithGamma/8_13Comp_coneIsoPhoton-eps-converted-to.pdf} \end{overpic}
+   \end{column}
+
+  \end{columns}
+
+\end{frame}
+%--------------------------------------------------
+
+\setcounter{framenumber}{19}
 
 \end{document}
